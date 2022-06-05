@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
 url(r'^$',views.index,name = 'index'),
-url(r'^instagram/', views.instagram, name = 'instagram'),
+url(r'^feed/', views.feed, name = 'feed'),
 ]
