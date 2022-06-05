@@ -7,3 +7,10 @@ def index(request):
     
 
     return render(request, 'index.html')
+
+def instagram(request):
+    
+
+  
+
+    return render(request, 'instagram/instagram.html')
