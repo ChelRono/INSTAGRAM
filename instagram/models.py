@@ -29,5 +29,15 @@ class Following(models.Model):
 
     def __str__(self):
         return self.name
+
+class Comment(models.Model):
+    post = models.IntegerField(default=0)
+    name = models.CharField(blank=True,max_length = 255)
+    comment = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.name
         
 
