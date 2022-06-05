@@ -18,8 +18,16 @@ class Post(models.Model):
     caption = models.CharField(blank=True,max_length = 255)
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
     like = models.IntegerField(default=0)
+    
 
     def __str__(self):
         return self.caption
+
+class Following(models.Model):
+    name = models.CharField(blank=True,max_length = 255)
+    followed = models.CharField(blank=True,max_length = 255)
+
+    def __str__(self):
+        return self.name
         
 
