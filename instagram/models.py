@@ -2,6 +2,8 @@ from django.db import models
 
 from cloudinary.models import CloudinaryField
 
+import instagram
+
 class Profile(models.Model):
     name = models.CharField(max_length = 255,null=True)
     profile_pic= CloudinaryField('picture' ,null='True')
@@ -15,6 +17,11 @@ class Profile(models.Model):
 
     def save_profile(self):
         self.save()
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        profile = cls.objects.filter(name__icontains=search_term)
+        return profile
 
 
 class Post(models.Model):
