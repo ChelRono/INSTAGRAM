@@ -16,3 +16,5 @@ class ProfileTestClass(TestCase):
         self.valarie.save_profile()
         profile = Profile.objects.all()
         self.assertTrue(len(profile) > 0)
+
+  

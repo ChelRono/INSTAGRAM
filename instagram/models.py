@@ -13,6 +13,10 @@ class Profile(models.Model):
     class Meta:
         ordering = ['name']
 
+    def save_profile(self):
+        self.save()
+
+
 class Post(models.Model):
     picture =CloudinaryField('picture' ,null='True')
     caption = models.CharField(blank=True,max_length = 255)
