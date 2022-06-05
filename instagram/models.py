@@ -1,12 +1,25 @@
 from django.db import models
-from django.contrib.auth.models import User
+
 from cloudinary.models import CloudinaryField
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length = 255,null=True)
     profile_pic= CloudinaryField('picture' ,null='True')
     bio = models.CharField(max_length = 255)
 
     def __str__(self):
-        return f'{self.user.username}'
+        return self.name
+     
+    class Meta:
+        ordering = ['name']
+
+class Post(models.Model):
+    picture =CloudinaryField('picture' ,null='True')
+    caption = models.CharField(blank=True,max_length = 255)
+    profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    like = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.caption
+        
 
