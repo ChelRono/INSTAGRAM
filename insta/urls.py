@@ -18,5 +18,6 @@ from django.urls import re_path as url,include
 
 urlpatterns = [
     url('admin/', admin.site.urls),
-    url('',include('instagram.urls'))
+    url('',include('instagram.urls')),
+  
 ]
