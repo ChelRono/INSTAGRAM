@@ -4,6 +4,14 @@ from cloudinary.models import CloudinaryField
 
 import instagram
 
+class User(models.Model):
+    name = models.CharField(max_length=40)
+    pwd = models.CharField(max_length=40)
+
+    def __str__(self):
+        return self.name
+
+
 class Profile(models.Model):
     name = models.CharField(max_length = 255,null=True)
     profile_pic= CloudinaryField('picture' ,null='True')
@@ -29,14 +37,18 @@ class Post(models.Model):
     caption = models.CharField(blank=True,max_length = 255)
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
     like = models.IntegerField(default=0)
+    comment = models.TextField(default=True)
     
 
     def __str__(self):
         return self.caption
 
-class Following(models.Model):
-    name = models.CharField(blank=True,max_length = 255)
-    followed = models.CharField(blank=True,max_length = 255)
+class Followers(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    another_user = models.ManyToManyField(User, related_name='another_user')
+
+    def __str__(self):
+        return self.user.name
 
     def __str__(self):
         return self.name

@@ -24,14 +24,14 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-            <a class="navbar-item">
+            <a class="navbar-item" href="{% url 'feed' %} ">
               Home
             </a>
       
-            <a class="navbar-item">
-              Explore
+            <a class="navbar-item" href="{% url 'addpost' %}">
+              Post
             </a>
-            <a class="navbar-item">
+            <a class="navbar-item" href="{% url 'profile' %} ">
                 Profile
               </a>
               <a class="navbar-item">
@@ -153,3 +153,4 @@
   {% endfor %}  
   </body>
 </html>
+

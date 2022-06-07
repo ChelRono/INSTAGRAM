@@ -1,6 +1,8 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.forms import ModelForm
+from .models import Post,Comment
 
 
 # Create your forms here.
@@ -18,3 +20,16 @@ class NewUserForm(UserCreationForm):
 		if commit:
 			user.save()
 		return user
+
+
+
+class PostForm(ModelForm):
+    class Meta:
+       model=Post
+       fields = ("picture","caption")
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('post','name')
