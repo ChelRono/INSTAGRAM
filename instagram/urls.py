@@ -11,7 +11,9 @@ url("register", views.register_request, name="register"),
 url("login", views.login_request, name="login"),
 url("logout", views.logout_request, name= "logout"),
 url("addpost", views.add_post, name= "addpost"),
-url('post_detail/', views.post_detail, name='post_detail')
+url('post_detail/', views.post_detail, name='post_detail'),
+url('follow/<str:user_name>', views.follow_user, name='follow'),
+
 
 
 

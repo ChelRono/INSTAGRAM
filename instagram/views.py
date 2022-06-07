@@ -75,7 +75,7 @@ def login_request(request):
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
-	return redirect("main:homepage")
+	return redirect("index")
 
 
 def add_post(request):
@@ -85,7 +85,8 @@ def add_post(request):
             post = Post()
             post.image_caption = request.POST.get('image_caption')
             post.save()
-            return redirect('/post/' + post.id)
+            return redirect('feed')
+			
     else:
         form = PostForm()
 
@@ -114,3 +115,11 @@ def post_detail(request):
                                            'comments': comments,
                                            'new_comment': new_comment,
                                            'comment_form': comment_form})
+
+def followers(request):
+
+	return render(request)
+
+def follow_user(request):
+
+	return render (request)
