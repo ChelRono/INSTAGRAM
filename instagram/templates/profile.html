@@ -1,48 +1,155 @@
-{%extends 'base.html'%}
-<title>Feed</title>
-{% block content %}
-{{block.super}}
 
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="">
+            <img src="https://thumbs.dreamstime.com/b/instagram-141049465.jpg" width="80" height="30">
+          </a>
+      
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+      
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item">
+              Home
+            </a>
+      
+            <a class="navbar-item">
+              Explore
+            </a>
+            <a class="navbar-item">
+                Profile
+              </a>
+              <a class="navbar-item">
+                Notifications
+              </a>
+      
+              <a class="navbar-item">
+                Settings
+              </a>
+      
+        
+          
+        </div>
+      </nav>
 
 {% for profile in profiles %}
-<div class="container ">
-  <div class="row align-items-center h-100">
-    <div class="w-75 p-3">
-        <p class="card-text">{{ profile.name }}</p>
-      <div class="card" style="width:400px">
-        <img class="card-img-top" src="{{profile.profile_pic.url}}" alt="Card image" style="width:100%">
-        <div class="card-body">
-         
-          <p class="card-text">{{ profile.bio }}</p>
-         
-         
-        </div>
-      </div>
-     
-  {% endfor %}
-{% endblock %}
+  <section class="section">
+    <div class="container">
+        <article class="media">
+            <div class="media-left">
+                <figure class="image is-128x128">
+            <img class="is-rounded" src="{{profile.profile_pic.url}}">
+          </figure>
+            </div>
+            <div class="media-content">
+                <h1 class="title">@rono</h1>
+                <h2 class="subtitle">Valarie Rono</h2>
+                <button class="button is-link">Follow</button>
+            </div>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Posts</p>
+                <p class="title">4</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Following</p>
+                <p class="title">123</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Followers</p>
+                <p class="title">456</p>
+              </div>
+            </div>
+            <div class="level-item has-text-centered">
+              <div>
+                <p class="heading">Likes</p>
+                <p class="title">789</p>
+              </div>
+            </div>
+          </nav>
+        </article>
+    </div>
+    
+  </section>
+  <section class="section">
+    <div class="container">
+        <div class="columns is-multiline is-mobile is-centered">
+            <div class="column is-one-quarter">
 
-{%extends 'base.html'%}
-<title>Feed</title>
-{% block content %}
-{{block.super}}
+                <div class="box">
+                    <article class="media">
+                      <div class="media-left">
+                        <figure class="image is-128x128">
+                          <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                        </figure>
+                      </div>
+                      
+                    </article>
+                  </div>
+                      </div>
 
+                      <div class="column is-one-quarter">
 
-{% for post in posts %}
-<div class="col-sm-12 col-md-8 offset-md-2 mt-5 p-0 post-container">
-  <div class="row">
-    <div class="col-6 mx-auto">
-      <h4 class="card-title">{{ post.name }}</h4>
-      <div class="card" style="width:400px">
-        <img class="card-img-top" src="{{post.picture.url}}" alt="Card image" style="width:100%">
-        <div class="card-body">
-         
-          <p class="card-text">{{ post.caption }}</p>
-          <p class="card-text">{{post.likes}}</p>
-         
-          <a href="{% url 'profile' %}"class="btn btn-primary">See Profile</a>
-        </div>
-      </div>
-     
-  {% endfor %}
-{% endblock %}
+                        <div class="box">
+                            <article class="media">
+                              <div class="media-left">
+                                <figure class="image is-128x128">
+                                  <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                                </figure>
+                              </div>
+                              
+                            </article>
+                          </div>
+                              </div>
+                              <div class="column is-one-quarter">
+
+                                <div class="box">
+                                    <article class="media">
+                                      <div class="media-left">
+                                        <figure class="image is-128x128">
+                                          <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                                        </figure>
+                                      </div>
+                                      
+                                    </article>
+                                  </div>
+                                      </div>
+                                      <div class="column is-one-quarter">
+
+                                        <div class="box">
+                                            <article class="media">
+                                              <div class="media-left">
+                                                <figure class="image is 128x128">
+                                                  <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                                                </figure>
+                                              </div>
+                                              
+                                            </article>
+                                          </div>
+                                              </div>
+                    </div>
+                  </div>
+  </section>  
+  {% endfor %}  
+  </body>
+</html>
