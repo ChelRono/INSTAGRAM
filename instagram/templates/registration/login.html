@@ -5,14 +5,37 @@
 
         
 
-<div class="container py-5">
-    <h1>Login</h1>
+
+<body style="background-color: darkslateblue;";>
+
+<div class="container-fluid" >
+    <div class="row" style="margin-left:35%;">
+        <div class="col-md-1 col-sm-1" style="margin-top:10%;">
+            <i id="title" class="fab fa-instagram" style="font-size:40px;"></i>
+        </div>
+        
+    </div>
+  <div class="row" style="margin-top:3%;">
+    <!-- Empty div -->
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      
+      <div class="panel panel-default">
+        <div class="panel-body">
+    
     <form method="POST">
+   
       {% csrf_token %}
-      {{ login_form }}
+     
+      {{ login_form.as_p }}
       <button class="btn btn-primary" type="submit">Login</button>
     </form>
     <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
   </div>
-
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    </div>
 {% endblock %}

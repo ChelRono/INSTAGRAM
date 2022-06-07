@@ -1,6 +1,31 @@
-{%extends 'base.html'%}
-{% block content %} 
-{{ block.super}}
 
-<h1>bye</h1>
-{% endblock %}
+{% block content %} 
+
+<body style="background-image: url(https://www.xda-developers.com/files/2017/11/Instagram-is-Testing-New-Features-Including-Regram-Archive-Stories-and-More.png);background-size:100%;background-repeat: no-repeat;">
+
+
+   
+<div class="container-fluid" >
+    <div class="row" style="margin-left:35%;">
+        <div class="col-md-1 col-sm-1" style="margin-top:10%;">
+            <i id="title" class="fab fa-instagram" style="font-size:40px;"></i>
+        </div>
+        
+    </div>
+  <div class="row" style="margin-top:40%;">
+    <!-- Empty div -->
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      
+      <div class="panel panel-default">
+        <div class="panel-body" style="margin-left:50%;">
+                               <button type="button" class="btn btn-primary btn-lg"><a href="/accounts/login" class="btn btn-outline-info">Log In</a></button>
+                                <button> <a href="/accounts/register" style="color:hotpink;">Sign up</a></button>
+                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+</div>
+{%  endblock %}
