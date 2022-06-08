@@ -18,7 +18,7 @@ gallery-django
 
 * In your terminal:
         
-        $ git clone https://github.com/ChelRono/gallery-django.git
+        $ git clone https://github.com/ChelRono/INSTAGRAM.git
         $ cd gallery-app
 
 
