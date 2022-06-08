@@ -1,8 +1,7 @@
 # Project Title
 
-gallery-django
-[![Screenshot-from-2022-05-31-16-09-25.png](https://i.postimg.cc/CKts9XpD/Screenshot-from-2022-05-31-16-09-25.png)](https://postimg.cc/R37tHPFV)
-
+instagram
+[![Screenshot-from-2022-06-08-11-28-09.png](https://i.postimg.cc/HkJV0CBP/Screenshot-from-2022-06-08-11-28-09.png)](https://postimg.cc/MnS6xgky)
 ## Getting Started
 
 ## SetUp / Installation Requirements
