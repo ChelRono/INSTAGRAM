@@ -22,7 +22,7 @@ Instagram
 * In your terminal:
         
         $ git clone https://github.com/ChelRono/INSTAGRAM.git
-        $ cd gallery-app
+        $ cd IG
 
 
 ## Running the Application
