@@ -7,8 +7,8 @@ from .forms import NewUserForm
 from django.contrib.auth import login,authenticate,logout
 from django.contrib import messages
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import PostForm,CommentForm
-from .models import Post
+from .forms import PostForm,CommentForm,EditProfileForm
+from .models import Post,User
 
 # Create your views here.
 def index(request):
@@ -83,9 +83,9 @@ def add_post(request):
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = Post()
-            post.image_caption = request.POST.get('image_caption')
+            post.caption = request.POST.get('caption')
             post.save()
-            return redirect('feed')
+            return render('feed')
 			
     else:
         form = PostForm()
@@ -115,6 +115,28 @@ def post_detail(request):
                                            'comments': comments,
                                            'new_comment': new_comment,
                                            'comment_form': comment_form})
+
+
+def edit_profile(request):
+    if request.method == "POST":
+        form = EditProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            about_me = form.cleaned_data["about_me"]
+            username = form.cleaned_data["username"]
+            image = form.cleaned_data["image"]
+
+            user = User.objects.get(id=request.user.id)
+            profile = Profile.objects.get(user=user)
+            user.username = username
+            user.save()
+            profile.about_me = about_me
+            if image:
+                profile.image = image
+            profile.save()
+            return redirect("users:profile", username=user.username)
+    else:
+        form = EditProfileForm()
+    return render(request, "edit_profile.html", {'form': form})
 
 def followers(request):
 

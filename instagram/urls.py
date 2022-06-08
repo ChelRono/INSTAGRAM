@@ -13,6 +13,8 @@ url("logout", views.logout_request, name= "logout"),
 url("addpost", views.add_post, name= "addpost"),
 url('post_detail/', views.post_detail, name='post_detail'),
 url('follow/<str:user_name>', views.follow_user, name='follow'),
+url('edit-profile/', views.edit_profile, name='edit_profile'),
+    
 
 
 

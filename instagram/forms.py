@@ -29,7 +29,14 @@ class PostForm(ModelForm):
        fields = ("picture","caption")
 
 
+
+
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
-        fields = ('post','name')
+        fields = ('name', 'body')
+
+class EditProfileForm(forms.Form):
+    username = forms.CharField()
+    about_me = forms.CharField(widget=forms.Textarea())
+    image = forms.ImageField(required=False)
