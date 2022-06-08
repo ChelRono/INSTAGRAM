@@ -35,7 +35,7 @@ gallery-django
 
 * To run the tests for the class files:
 
-        $ python3.8 manage.py tests images
+        $ python3.8 manage.py tests instagaram
 
 
 ## Deployment
