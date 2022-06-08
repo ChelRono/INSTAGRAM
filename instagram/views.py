@@ -85,7 +85,7 @@ def add_post(request):
             post = Post()
             post.caption = request.POST.get('caption')
             post.save()
-            return render('feed')
+        return redirect(request,'profile.html' ,{'post':post})
 			
     else:
         form = PostForm()
